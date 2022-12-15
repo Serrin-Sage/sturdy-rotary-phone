@@ -3,6 +3,7 @@
 puts "Deleting Restaurant/Customer data..."
 Restaurant.destroy_all
 Customer.destroy_all
+Review.destroy_all
 
 puts "Creating restaurants..."
 shack = Restaurant.create(name: "Karen's Lobster Shack", price: 1)
@@ -22,5 +23,10 @@ puts "Creating reviews..."
 # * and a review belongs to a customer.                              *
 # ********************************************************************
 # Create reviews Here
-
+review1 = Review.create(content: "This place was delicious!", star_rating: 4, restaurant_id: shack.id, customer_id: baby_spice.id)
+review2 = Review.create(content: "This place was AMAZING!", star_rating: 5, restaurant_id: bistro.id, customer_id: baby_spice.id)
+review3 = Review.create(content: "This place was terrible!", star_rating: 1, restaurant_id: palace.id, customer_id: ginger_spice.id)
+review4 = Review.create(content: "This place was okay at best!", star_rating: 3, restaurant_id: shack.id, customer_id: scary_spice.id)
+review5 = Review.create(content: "This place didn't have enough tvs!", star_rating: 2, restaurant_id: bistro.id, customer_id: sporty_spice.id)
+review6 = Review.create(content: "This place was my favorite!", star_rating: 5, restaurant_id: palace.id, customer_id: posh_spice.id)
 puts "Seeding done!"
